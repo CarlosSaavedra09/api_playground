@@ -1,0 +1,27 @@
+Instrucciones:
+
+1. Descarguen o clonen el proyecto
+2. Descarguen e Instalen XAMPP con la version de PHP 7.1.32
+
+	https://www.apachefriends.org/xampp-files/7.1.32/xampp-windows-x64-7.1.32-0-VC14-installer.exe
+
+3. Una vez hayan instalado XAMPP, ingresen a PHPMyAdmin para importar la base de datos, pueden realizar esto iniciando XAMPP, prendiendo los servicios de APACHE y MySQL, una vez prendidos ingresar en el navegador "localhost/phpMyAdmin/".
+
+4. Una vez dentro de phpMyAdmin, crear 2 bases de datos llamadas "phalcon_rest" y "phalcon_rest_log"
+
+5. Ya que tengamos creadas las 2 bases de datos vamos a importar los datos de los archivos que se encuentran en la carptea "schema" de la raiz del proyecto, cada archivo importarlo a su respectiva base de datos.
+
+6. Una vez listas las bases de datos, vamos a instalar el framework para poder correr la aplicacion, en este caso utilizamos phalcon, para descargarlo sigan el siguiente enlace.
+
+	https://github.com/phalcon/cphalcon/releases/download/v3.4.4/phalcon_x64_vc14_php7.1_3.4.4.zip
+
+7. Una vez descargado el archivo DLL, vamos a copiarlo en la siguiente ruta "C:/xampp/php/ext/"
+
+8. Con el archivo una vez dentro de la carpeta "ext", vamos ahora a editar un archivo de configuracion para que nuestro servidor (XAMPP) reconozca el framework, para esto vamos al panel de control de xampp y en las opciones de APACHE, presionar el boton "config" seleccionar la opcion "PHP.ini".
+
+9. Una vez abierto el archivo PHP.ini, debemos de buscar el apartado de las extensiones (extensions) y pegar la siguiente linea: 
+	extension=php_phalcon.dll;
+
+10. Guardamos el documento y procedemos a reiniciar el servidor (XAMPP), presionamos el boton de "stop" y despues presionamos el boton de "start".
+
+11. Una vez reiniciado el servidor, podemos empezar a realizar peticiones al servidor como se vio en el ejemplo con postman.
